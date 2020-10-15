@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
+    --dark:black;
     --backDark:orangered;
     --backLight:snow;
+    --dangerText:rgb(253, 10, 10);
+    --dangerBack:rgb(255, 200, 200);
 }
 
 *{
@@ -15,8 +18,24 @@ html,body{
 }
 h1{
     text-align: center;
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.menu{
     text-transform: uppercase;
     font-weight: 900;
+    background-color: var(--dark);
+    color: var(--backLight);
+    margin-top: 0;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 -0.1rem 0.5rem black;
+}
+.navBar{
+    font-weight: 600;
 }
 .container{
     background-color: var(--backLight);
@@ -24,7 +43,50 @@ h1{
     padding: 1rem;
     max-width:90%;
     margin: 5% auto;
+    box-shadow: 0 0 0.1rem black;
+}
+table{
+    width: 70%;
+    margin: 2rem auto;
+}
+tr{
+    border-top: 1rem solid gray;
+    line-height: 3rem;
+}
+td{
+    border-top: 0.01rem solid lightgray;
+
+}
+.alert{
+    font-weight: 700;
+    border-radius: 0.5rem;
+    width: 70%;
+    padding: 1;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.confirmAlert{
+    background-color: rgb(220, 255, 200);
+    box-shadow: 0 0 0.1rem yellowgreen;
+    color: teal;
+}
+.dangerAlert{
+    background-color: var(--dangerBack);
+    box-shadow: 0 0 0.1rem var(--dangerText);
+    color: var(--dangerText);
 }
 article{
     line-height: 2rem;
+}
+.txtCenter{
+    text-align: center;
+}
+.footer{
+    width: 100%;
+    background-color: var(--dark);
+    color: var(--backLight);
+    bottom: 0;
+    padding: 1rem 2rem;
+    position: absolute;
+    box-shadow: 0 0.1rem 0.5rem black;
 }
