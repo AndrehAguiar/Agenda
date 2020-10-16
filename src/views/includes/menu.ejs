@@ -1,5 +1,15 @@
 <menu class="menu">
-    Agenda
-    <nav class="navBar">Link</nav>
+    <a href="/">Agenda</a>
+    <span>
+        <% if(!user) { %>
+        <nav class="navBar"><a href="/login">Entrar</a></nav>
+        <% } else { %>
+        <span class="spUser">
+            <%= user.email %>
+        </span>
+        <nav class="navBar"><a href="/login/logout">Cadastrar</a></nav>
+        <nav class="navBar"><a href="/login/logout">Sair</a></nav>
+        <% } %>
+    </span>
 
 </menu>

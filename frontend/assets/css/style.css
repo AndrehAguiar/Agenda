@@ -5,7 +5,7 @@
     --backDark:orangered;
     --backLight:snow;
     --dangerText:rgb(253, 10, 10);
-    --dangerBack:rgb(255, 200, 200);
+    --dangerBack:rgb(255, 220, 220);
 }
 
 *{
@@ -13,7 +13,7 @@
     box-sizing: border-box;
 }
 html,body{
-    background-color: var(--backDark);
+    /* background-color: var(--backDark); */
     margin: 0;
 }
 h1{
@@ -21,8 +21,9 @@ h1{
     font-size: 3em;
     font-weight: 700;
     margin-bottom: 1rem;
+    margin-top: 1rem;
 }
-.menu{
+menu{
     text-transform: uppercase;
     font-weight: 900;
     background-color: var(--dark);
@@ -34,33 +35,49 @@ h1{
     justify-content: space-between;
     box-shadow: 0 -0.1rem 0.5rem black;
 }
+menu>a,.navBar>a{    
+    text-decoration: none;
+    color: var(--backLight);
+}
+.menu>a:hover,.navBar>a:hover{
+    color: lightgray;
+}
+menu>span{
+    display: flex;
+    flex-direction: row;
+}
 .navBar{
     font-weight: 600;
+    padding: 0 0.5rem;
+}
+.spUser{
+    text-transform: lowercase;
+    font-weight: 300;
+    margin-right: 2rem;
 }
 .container{
-    background-color: var(--backLight);
-    border-radius: 1rem;
-    padding: 1rem;
-    max-width:90%;
-    margin: 5% auto;
-    box-shadow: 0 0 0.1rem black;
+    max-width: 70rem;
+    margin: 0 auto;
 }
 table{
     width: 70%;
     margin: 2rem auto;
 }
-tr{
+tbody>tr{
     border-top: 1rem solid gray;
     line-height: 3rem;
 }
 td{
+    padding: 0 2rem;
     border-top: 0.01rem solid lightgray;
 
 }
 .alert{
-    font-weight: 700;
+    font-weight: 500;
     border-radius: 0.5rem;
-    width: 70%;
+    width: 50%;
+    max-width: 50rem;
+    min-width: 20rem;
     padding: 1;
     margin: 0 auto;
     padding: 1rem;
@@ -75,11 +92,54 @@ td{
     box-shadow: 0 0 0.1rem var(--dangerText);
     color: var(--dangerText);
 }
-article{
-    line-height: 2rem;
-}
 .txtCenter{
     text-align: center;
+}
+form{
+    margin: 0 auto;
+    width: 30%;
+    min-width: 20rem;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+form>hr{
+    width: 100%;
+}
+input{
+    width: 100%;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+button{
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0.2rem gray;
+}
+button:hover{
+    box-shadow: 0 0 0.1rem black;
+}
+.btnSubmit{
+    background-color: var(--backDark);
+    color: var(--backLight);
+}
+.btnSubmit:hover{
+    background-color: var(--dangerText);
+}
+.btnBar>button:focus, .btnBar:focus{
+    outline:none !important;
+}
+.btnBar{
+    display: flex;
+    justify-content: flex-end;
 }
 .footer{
     width: 100%;

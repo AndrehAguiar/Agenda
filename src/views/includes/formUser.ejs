@@ -1,0 +1,17 @@
+<form action=<%= formAction %> method="POST">
+
+    <hr>
+    <h4 class="txtCenter"><%= formTitle %></h4>
+    <div class="formRow">
+        <label for="inpEmail">E-mail</label>
+        <input type="email" id="inpEmail" name="email" autocomplete="email">
+    </div>
+    <div class="formRow">
+        <label for="inpPassword">Senha</label>
+        <input type="password" id="inpPassword" name="password" autocomplete="current-password">
+    </div>
+    <div class="formRow btnBar">
+        <button type="submit" class="btnSubmit"><%= btnText %></button>
+    </div>
+    <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+</form>
