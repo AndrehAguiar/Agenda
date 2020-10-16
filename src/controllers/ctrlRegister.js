@@ -6,23 +6,24 @@ exports.index = (req, res) => {
 
 exports.confirm = async (req, res) => {
     try {
-        const login = new Login(req.body);
+        const user = new Login(req.body);
 
-        await login.register();
+        await user.register();
 
-        if (login.errors.length > 0) {
-            req.flash('errors', login.errors);
+        if (user.errors.length > 0) {
+            req.flash('errors', user.errors);
             req.session.save(() => {
                 return res.redirect('../register');
             });
             return;
         }
         req.flash('success', 'Usuário cadastrado com sucesso!');
+        await user.login();
+        req.session.user = user.user;
         req.session.save(() => {
-            return res.redirect('../register');
+            res.redirect('../');
         });
-
-        return res.send(login.success);
+        return;
     } catch (err) {
         console.log(err);
         return res.render('error');

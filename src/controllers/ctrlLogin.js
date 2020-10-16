@@ -20,7 +20,7 @@ exports.confirm = async (req, res) => {
         req.flash('success', 'Olá, você entrou no sistema!');
         req.session.user = login.user;
         req.session.save(() => {
-            return res.redirect('/');
+            return res.redirect('../');
         });
 
         return res.send(login.success);

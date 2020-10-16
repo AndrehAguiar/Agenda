@@ -32,6 +32,7 @@ const { mddCSRF, mddCheckCSRF, mddErrors, mddGlobal } = require('./src/middlewar
 const { mddHome } = require('./src/middlewares/mddHome');
 const { mddLogin } = require('./src/middlewares/mddLogin');
 const { mddRegister } = require('./src/middlewares/mddRegister');
+const { mddContact, mddCttUpdate } = require('./src/middlewares/mddContact');
 
 app.use(helmet());
 
@@ -56,8 +57,10 @@ app.use(flash());
 app.use(mddGlobal);
 app.use(mddErrors);
 app.use('/', mddHome);
-app.use('/login', mddLogin);
-app.use('/register', mddRegister);
+app.use('/login/', mddLogin);
+app.use('/register/', mddRegister);
+app.use('/contact/', mddContact);
+app.use('/contact/:id', mddCttUpdate);
 
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');

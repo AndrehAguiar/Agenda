@@ -49,6 +49,7 @@ menu>span{
 .navBar{
     font-weight: 600;
     padding: 0 0.5rem;
+    font-size: smaller;
 }
 .spUser{
     text-transform: lowercase;
@@ -60,7 +61,8 @@ menu>span{
     margin: 0 auto;
 }
 table{
-    width: 70%;
+    width: 80%;
+    min-width: 50rem;
     margin: 2rem auto;
 }
 tbody>tr{
@@ -68,7 +70,7 @@ tbody>tr{
     line-height: 3rem;
 }
 td{
-    padding: 0 2rem;
+    padding: 0 1rem;
     border-top: 0.01rem solid lightgray;
 
 }
@@ -95,6 +97,16 @@ td{
 .txtCenter{
     text-align: center;
 }
+.txtAlert{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+.txtDanger{
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
 form{
     margin: 0 auto;
     width: 30%;
@@ -104,6 +116,13 @@ form{
     flex-direction: column;
     justify-content: center;
 
+}
+form>h2{
+    margin-bottom: 0.1rem;
+}
+form>p{
+    margin: 0 0 2rem;
+    padding-top: 0.1rem;
 }
 form>hr{
     width: 100%;

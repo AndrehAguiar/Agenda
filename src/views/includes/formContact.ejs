@@ -1,0 +1,26 @@
+<form action="<%- formAction %><% if (contact._id){%><%= contact._id%><% } %>" method="POST">
+    <hr>
+    <h2 class="txtCenter"><%= formTitle %></h2>
+    <p class=" txtCenter"><%= formDescr %></p>
+    <div class="rowForm">
+        <label for="inpName">Nome:</label>
+        <input value="<%= contact.name %>" type="text" id="inpName" name="name" autocomplete="name">
+    </div>
+    <div class="rowForm">
+        <label for="inpLastname">Sobrenome:</label>
+        <input value="<%= contact.lastname %>" type="text" id="inpLastname" name="lastname" autocomplete="family-name">
+    </div>
+    <div class="rowForm">
+        <label for="inpEmail">E-mail:</label>
+        <input value="<%= contact.email %>" type="email" id="inpEmail" name="email">
+    </div>
+    <div class="rowForm">
+        <label for="inpPhone">Telefone:</label>
+        <input value="<%= contact.phone %>" type="tel" id="inpPhone" name="phone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}"
+            placeholder="(00) 0000-0000">
+    </div>
+    <div class="formRow btnBar">
+        <button type="submit" class="btnSubmit"><%= btnText %></button>
+    </div>
+    <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+</form>

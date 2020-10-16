@@ -1,0 +1,14 @@
+<div class="table">
+    <table>
+        <% lstContact.forEach(contact => {%>
+        <tr>
+            <td><%= contact.name %></td>
+            <td><%= contact.lastname %></td>
+            <td><%= contact.phone %></td>
+            <td><%= contact.email %></td>
+            <td><a class="txtAlert" href="/contact/<%= contact._id %>">Editar</a></td>
+            <td><a class="txtDanger" href="/contact/delete/<%= contact._id %>">Excluir</a></td>
+        </tr>
+        <% }); %>
+    </table>
+</div>
