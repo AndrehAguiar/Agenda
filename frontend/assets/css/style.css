@@ -107,6 +107,13 @@ td{
     color: red;
     font-weight: bold;
 }
+.txtAlert:hover, .txtDanger:hover{
+    text-decoration: underline;
+}
+.invalid{
+    color: red;
+    font-size: small;
+}
 form{
     margin: 0 auto;
     width: 30%;
@@ -129,10 +136,12 @@ form>hr{
 }
 input{
     width: 100%;
-    margin-bottom: 1rem;
     line-height: 2rem;
     font-size: 1.2rem;
     padding: 0 0.5rem;
+}
+.formRow{    
+    margin-bottom: 1.5rem;
 }
 button{
     cursor: pointer;

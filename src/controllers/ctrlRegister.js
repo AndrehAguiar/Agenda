@@ -1,7 +1,7 @@
 const Login = require('../models/Login');
 
 exports.index = (req, res) => {
-    res.render('./register');
+    res.render('register');
 };
 
 exports.confirm = async (req, res) => {
@@ -13,7 +13,7 @@ exports.confirm = async (req, res) => {
         if (user.errors.length > 0) {
             req.flash('errors', user.errors);
             req.session.save(() => {
-                return res.redirect('../register');
+                return res.redirect('/register');
             });
             return;
         }
@@ -21,7 +21,7 @@ exports.confirm = async (req, res) => {
         await user.login();
         req.session.user = user.user;
         req.session.save(() => {
-            res.redirect('../');
+            res.redirect('/');
         });
         return;
     } catch (err) {
